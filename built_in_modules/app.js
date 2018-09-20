@@ -43,3 +43,14 @@ fs.readdir('./', (err, result) => {
     console.log('Result: ', result);
   }
 });
+
+// ----------------- Simple exercise before logging a message raise an event ----------------------- //
+const Logger = require('./logger');
+const logger = new Logger();
+
+// Register a listener
+logger.on('log', arg => {
+  console.log('wowwww', arg);
+});
+
+logger.log('This is message from event_module');
